@@ -14,5 +14,9 @@
 
 - [初始技术设计](01-technical-design.md)
 - [初始 UI 规范](02-ui-prototype-spec.md)
+- [当前开发计划](docs/plans/README.md)
+- [模型能力与接口证据](docs/plans/02-cangyuan.md)
+- [开发任务与依赖](docs/plans/01-roadmap.md)
+- [验收与 30 元测试预算](docs/plans/03-validation.md)
 
 请通过 GitHub Issues 跟踪开发与实际验证状态。用户 PSD、API Key、本地缓存与私有测试记录不会提交到仓库。
