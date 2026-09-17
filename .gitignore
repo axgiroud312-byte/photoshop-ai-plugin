@@ -33,3 +33,7 @@ Thumbs.db
 # Machine-specific tools
 .uxprc
 .uxp/
+
+# Bundled plugin/demo output (rebuilt by pnpm plugin:build)
+apps/plugin/main.js
+apps/demo/
