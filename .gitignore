@@ -1,0 +1,35 @@
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+*.local.json
+*.key
+*.pem
+secrets/
+
+# Dependencies and generated output
+node_modules/
+.pnpm-store/
+dist/
+build/
+coverage/
+.cache/
+.local/
+tmp/
+output/
+artifacts/
+*.log
+*.tsbuildinfo
+
+# User artwork and Adobe temporary files
+*.psd
+*.psb
+*.psdt
+*.tmp
+*.bak
+Thumbs.db
+.DS_Store
+
+# Machine-specific tools
+.uxprc
+.uxp/
