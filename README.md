@@ -18,5 +18,6 @@
 - [模型能力与接口证据](docs/plans/02-cangyuan.md)
 - [开发任务与依赖](docs/plans/01-roadmap.md)
 - [验收与 30 元测试预算](docs/plans/03-validation.md)
+- [运行本地 Mock 与契约测试](docs/development/local-mock.md)
 
 请通过 GitHub Issues 跟踪开发与实际验证状态。用户 PSD、API Key、本地缓存与私有测试记录不会提交到仓库。

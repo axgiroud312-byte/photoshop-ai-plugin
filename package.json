@@ -1,0 +1,20 @@
+{
+  "name": "photoshop-ai-plugin",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "pnpm build && node --test dist/tests/bridge.test.js",
+    "fixtures": "pnpm build && node dist/scripts/generate-fixtures.js",
+    "bridge": "pnpm build && node dist/apps/bridge/src/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.5",
+    "typescript": "7.0.2"
+  }
+}
