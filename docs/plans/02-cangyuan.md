@@ -2,10 +2,12 @@
 
 采集日期：2026-09-17。状态：公开协议核查，全部模型的真实调用仍未验证。当前表不是运行时授权列表。
 
+候选构建刷新（2026-09-17T09:35:12.958Z）：公开定价图像模型变为 26 个；`midjourney-1k` 与 `midjourney-2k` 已从公开定价和模型文档消失，不再列入 v0.1 发布清单。适配器代码仍保留 Midjourney 家族规则，若目录再次出现可重新纳入。详见 [截止点记录](../validation/2026-09-17-catalog-cutoff.md)。
+
 ## 数据来源与判定
 
-- [公开定价接口](https://direct-api.cangyuansuanli.cn/api/pricing)：本轮 28 个图像模型条目，未使用 Key。
-- [官方文档目录](https://direct-api.cangyuansuanli.cn/docs-static/manifest.json)：本轮 30 个图像模型文档。
+- [公开定价接口](https://direct-api.cangyuansuanli.cn/api/pricing)：早间快照 28 个图像模型条目；候选构建刷新后 26 个。未使用 Key。
+- [官方文档目录](https://direct-api.cangyuansuanli.cn/docs-static/manifest.json)：早间 30 个图像模型文档；刷新后不再包含 Midjourney。
 - [模型发现](https://direct-api.cangyuansuanli.cn/docs-static/capabilities/models.md)：当前 Token 可见性通过带凭据的 `GET /v1/models` 验证。无凭据实测返回 401。
 - 下表精确 ID 链接指向本轮逐一读取的官方模型 JSON。
 
