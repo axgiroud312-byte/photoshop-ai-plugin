@@ -30,7 +30,7 @@
 | [#11](https://github.com/axgiroud312-byte/photoshop-ai-plugin/issues/11) | 执行真实 Photoshop 与发布前全部模型验收 | M5 | [#8](https://github.com/axgiroud312-byte/photoshop-ai-plugin/issues/8)、[#10](https://github.com/axgiroud312-byte/photoshop-ai-plugin/issues/10)、[#9](https://github.com/axgiroud312-byte/photoshop-ai-plugin/issues/9) |
 | [#12](https://github.com/axgiroud312-byte/photoshop-ai-plugin/issues/12) | 交付开发安装包、启动入口、运行说明与发布检查 | M5 | [#11](https://github.com/axgiroud312-byte/photoshop-ai-plugin/issues/11) |
 
-M0 是后续功能实施的前置条件。#7 的公开协议核查可与本地 M0 并行推进；没有 Key 或文件直传证据时保持未完成，不影响不付费的工程验证。
+用户最新要求先开发、后真机验收：M0 改为发布/宿主验收前置条件，不再阻止后续代码实施。表中依赖继续约束验收与关闭 Issue；可在模拟宿主和本地合同测试下先开发相关模块。#7 没有 Key 或文件直传证据时保持未完成，不影响免费工程验证。
 
 ## 提交与关联
 
