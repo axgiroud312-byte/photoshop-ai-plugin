@@ -166,6 +166,21 @@ test('local bridge contract and cancellation boundaries', async t => {
   });
 });
 
+test('twenty mock roundtrips stay byte-identical and free the slot', async () => {
+  const bridge = await startMockBridge({ port: 0 });
+  const original = fixture.pixels.slice();
+  for (let i = 0; i < 20; i++) {
+    const response = await fetch(bridge.url + '/v1/mock/roundtrip', {
+      method: 'POST', headers: inputHeaders(bridge.token), body: Buffer.from(fixture.pixels)
+    });
+    assert.equal(response.status, 200);
+    assert.deepEqual(new Uint8Array(await response.arrayBuffer()), original);
+  }
+  const health = await fetch(bridge.url + '/v1/health', { headers: { authorization: 'Bearer ' + bridge.token } });
+  assert.equal((await health.json()).activeRequests, 0);
+  await bridge.close();
+});
+
 test('pixel validation and canonical hash preserve visible data', () => {
   assert.throws(() => rgbaLength(0, 1));
   assert.throws(() => rgbaLength(8192, 8192));
