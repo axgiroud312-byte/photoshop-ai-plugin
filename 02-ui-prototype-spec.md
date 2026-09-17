@@ -1,5 +1,7 @@
 # Photoshop AI 插件 v0.1 UI 原型文档
 
+> 此文件保留初始 v1.0 UI 规范。当前首版增加文字生图、模型能力选择及多候选单选，见 [当前范围](docs/plans/00-scope.md)。引用的 HTML 原型尚未交付，不能当作已有文件或正式插件。
+
 **文档版本：** 1.0　 **编写日期：** 2026-09-17  
 **对应技术设计：** `01-technical-design.md`  
 **可点击演示：** `03-interactive-prototype.html`

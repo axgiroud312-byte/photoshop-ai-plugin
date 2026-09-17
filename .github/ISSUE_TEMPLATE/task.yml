@@ -1,0 +1,29 @@
+name: 开发任务
+description: 有范围、依赖和验收条件的开发任务
+title: "[阶段] "
+labels: ["implementation"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: 用户结果与范围
+      description: 这个任务完成后，用户能观察到什么？
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依赖
+      description: 对应 Issue、模型权限或宿主环境
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收条件
+      description: 可检查的通过标准，区分自动测试和真实 Photoshop/模型
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 当前证据和阻碍
+      description: 仅放脱敏信息，Key 和用户 PSD 保持本地
