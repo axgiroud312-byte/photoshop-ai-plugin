@@ -15,5 +15,6 @@
     "sourceMap": true,
     "skipLibCheck": true
   },
-  "include": ["apps/**/*.ts", "packages/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts"]
+  "include": ["apps/bridge/**/*.ts", "packages/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["apps/plugin", "apps/demo", "dist", "node_modules"]
 }
