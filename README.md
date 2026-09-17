@@ -1,14 +1,22 @@
 # Photoshop AI Plugin
 
-面向 Windows Photoshop 的 AI 图层编辑与文字生图插件，首版接入沧元算力（Cangyuan）的图像模型。
+面向 Windows Photoshop 的 UXP Manifest v5 插件：整层编辑与文字生图，本地 Node 服务转发沧元算力（Cangyuan）图像模型。选区编辑是 v0.2，蒙版编辑是 v0.3。
 
 ## 当前状态
 
-项目正在建立工程与验收流程，尚未发布可用插件。根目录两份 v1.0 文档是初始设计，后续确认的范围以 `docs/plans/` 为准。
+- 本地 Mock 服务、资产管线、动态模型目录、任务状态机、模拟宿主应用和 UXP 面板代码已经集成。
+- 默认 Mock 下可重复跑通两条用户流程（生成候选 → 单选 → 导出/应用合同）。这不是真实 Photoshop 或真实模型验收。
+- 真实 UXP 加载与真实 Cangyuan 付费调用仍开放跟踪；没有项目 Key 时不会发起付费请求。
+- 仓库公开，当前不加开源许可证。
 
-目标流程：选择模型与修改要求 → 生成候选 → 选择一张并预览 → 确认后应用为 Photoshop 新图层。
+```powershell
+pnpm install --frozen-lockfile
+pnpm test
+pnpm plugin:build
+pnpm bridge
+```
 
-整层编辑保留并隐藏原层；文字生图保留已有图层显隐。Photoshop 的真实图层往返、透明边缘、位置和单步撤销是首个开发里程碑。
+安装、配对和卸载见 [用户说明](docs/user/安装与使用.md)。开发命令与证据分层见 [开发者说明](docs/development/developer.md)。
 
 ## 资料
 
@@ -18,6 +26,7 @@
 - [模型能力与接口证据](docs/plans/02-cangyuan.md)
 - [开发任务与依赖](docs/plans/01-roadmap.md)
 - [验收与 30 元测试预算](docs/plans/03-validation.md)
-- [运行本地 Mock 与契约测试](docs/development/local-mock.md)
+- [运行本地 Mock](docs/development/local-mock.md)
+- [v0.1 测试矩阵](docs/validation/2026-09-17-v01-matrix.md)
 
 请通过 GitHub Issues 跟踪开发与实际验证状态。用户 PSD、API Key、本地缓存与私有测试记录不会提交到仓库。
