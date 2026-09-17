@@ -25,4 +25,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
       - run: pnpm fixtures
+      - run: pnpm plugin:build
+      - run: pnpm pack:dev
+      - run: pnpm docs:links
       - run: git diff --check

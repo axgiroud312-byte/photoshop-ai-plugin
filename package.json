@@ -13,6 +13,8 @@
     "fixtures": "pnpm build && node dist/scripts/generate-fixtures.js",
     "bridge": "pnpm build && node dist/apps/bridge/src/cli.js",
     "plugin:build": "node scripts/build-plugin.mjs",
+    "pack:dev": "pnpm plugin:build && pnpm build && node dist/scripts/package-dev.js",
+    "docs:links": "node scripts/check-doc-links.mjs",
     "demo": "pnpm plugin:build && node -e \"console.log('打开 apps/demo/index.html （DEMO / 模拟宿主）')\""
   },
   "devDependencies": {
