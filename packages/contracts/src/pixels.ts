@@ -1,3 +1,5 @@
+import { sha256Hex } from './sha256.js';
+
 export const MAX_EDGE = 8192;
 export const MAX_PIXELS = 16_777_216;
 export const CHANNELS = 4;
@@ -47,4 +49,40 @@ export function canonicalRgba(pixels: Uint8Array): Uint8Array {
     if (result[i + 3] === 0) result.fill(0, i, i + 3);
   }
   return result;
+}
+
+export function pixelSha256(pixels: Uint8Array): string {
+  return sha256Hex(pixels);
+}
+
+export function canonicalSha256(pixels: Uint8Array): string {
+  return pixelSha256(canonicalRgba(pixels));
+}
+
+export function premultiplyStraight(pixels: Uint8Array): Uint8Array {
+  const out = pixels.slice();
+  for (let i = 0; i < out.length; i += 4) {
+    const a = out[i + 3]! / 255;
+    out[i] = Math.round(out[i]! * a);
+    out[i + 1] = Math.round(out[i + 1]! * a);
+    out[i + 2] = Math.round(out[i + 2]! * a);
+  }
+  return out;
+}
+
+export function unpremultiplyToStraight(pixels: Uint8Array): Uint8Array {
+  const out = pixels.slice();
+  for (let i = 0; i < out.length; i += 4) {
+    const a = out[i + 3]!;
+    if (a === 0) {
+      out.fill(0, i, i + 3);
+      continue;
+    }
+    if (a === 255) continue;
+    const inv = 255 / a;
+    out[i] = Math.min(255, Math.round(out[i]! * inv));
+    out[i + 1] = Math.min(255, Math.round(out[i + 1]! * inv));
+    out[i + 2] = Math.min(255, Math.round(out[i + 2]! * inv));
+  }
+  return out;
 }
