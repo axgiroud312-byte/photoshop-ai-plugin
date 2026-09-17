@@ -17,9 +17,11 @@ pnpm bridge
 
 会话 Token 随启动重新生成，保存在 Git 忽略的 `.local/bridge-session.local.json`；不要把这个文件或完整请求头发到 GitHub。Token 不是 Cangyuan Key，此版本不会读取模型 Key，也没有远端生成入口。Windows 文件访问权限继承项目目录，Token 不对本机同一用户下的恶意程序提供隔离。
 
+完整本地服务在同一端口提供健康检查、配置、模型目录、资产与任务 API；`POST /v1/mock/roundtrip` 仍保留，供 M0 二进制往返回归。完整安装见 [用户说明](../user/安装与使用.md)。
+
 ## 探针协议
 
-这是一条供 M0 验证的临时协议，不是最终的资产/任务服务协议。
+下面这条探针协议继续用于 M0 回归，也是最终服务的一部分。
 
 - 请求都需要 `Authorization: Bearer <当前会话 Token>`。
 - `GET /v1/health` 返回协议版本、活动请求数和 `remoteGenerationEnabled: false`，不返回 Token。
