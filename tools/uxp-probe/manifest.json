@@ -1,0 +1,17 @@
+{
+  "manifestVersion": 5,
+  "id": "com.axgiroud312.photoshop-ai.host-probe",
+  "name": "Photoshop AI Host Probe",
+  "version": "0.0.1",
+  "main": "index.html",
+  "host": { "app": "PS", "minVersion": "26.0.0", "data": { "apiVersion": 2 } },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "hostProbe",
+      "label": { "default": "AI 开发探针" },
+      "minimumSize": { "width": 320, "height": 320 },
+      "preferredDockedSize": { "width": 360, "height": 520 }
+    }
+  ]
+}
